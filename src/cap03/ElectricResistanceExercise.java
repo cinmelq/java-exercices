@@ -15,14 +15,15 @@ public class ElectricResistanceExercise {
 			resistanceArr[i] = resistanceInput;
 		}
 		
-		int[] resistanceOriginal = Arrays.copyOf(resistanceArr, 4);
+		int[] originalResistanceArr = Arrays.copyOf(resistanceArr, 4);
 		
 		Arrays.sort(resistanceArr);
 
 		JOptionPane.showMessageDialog(null,
-				"Inputted resistances:\n" + resistanceOriginal[0] + ", " + resistanceOriginal[1] + ", " + resistanceOriginal[2] + ", "
-						+ resistanceOriginal[3] + "\nThe lowest resistance is: "
+				"Inputted resistances:\n" + originalResistanceArr[0] + ", " + originalResistanceArr[1] + ", " + originalResistanceArr[2] + ", "
+						+ originalResistanceArr[3] + "\nThe lowest resistance is: "
 						+ resistanceArr[0]
 						+ "\nThe highest resistance is " + resistanceArr[3]);
+		
 	}
 }
