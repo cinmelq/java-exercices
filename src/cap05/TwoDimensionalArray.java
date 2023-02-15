@@ -20,7 +20,7 @@ public class TwoDimensionalArray {
 			for (int column = 0; column < headquarters[line].length; column++) {
 				System.out.println("[" + line + "," + column + "]" + " = " + headquarters[line][column]);
 			}
-
+			
 		}
 	}
 }
