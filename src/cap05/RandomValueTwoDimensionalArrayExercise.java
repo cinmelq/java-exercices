@@ -1,6 +1,6 @@
 package cap05;
 
-public class RandomValueTwoDimensionalArray {
+public class RandomValueTwoDimensionalArrayExercise {
 
 	public static void main(String[] args) {
 
