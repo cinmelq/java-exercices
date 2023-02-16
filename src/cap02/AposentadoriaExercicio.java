@@ -33,10 +33,10 @@ public class AposentadoriaExercicio {
 								+ tempoRestanteTempoDeContribuicao
 								+ " anos para aposentar por tempo de contribuição.");
 			} else if (sexoLetraMaiuscula.equals("F") && verificacaoTempoDeContribuicaoF && verificacaoIdadeF) {
-				float tempoRestanteTempoDeContribuicao = 35 - tempoDeContribuicao;
-				float tempoRestanteIdade = 65 - idade;
+				float tempoRestanteTempoDeContribuicao = 30 - tempoDeContribuicao;
+				float tempoRestanteIdade = 60 - idade;
 				JOptionPane.showMessageDialog(null,
-						"Faltam " + tempoRestanteIdade + " anos aposentar por idade." + "/nRestam "
+						"Faltam " + tempoRestanteIdade + " anos para se aposentar por idade." + "\nFaltam "
 								+ tempoRestanteTempoDeContribuicao
 								+ " anos para aposentar por tempo de contribuição.");
 			} else {
