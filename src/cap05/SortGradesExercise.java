@@ -3,38 +3,37 @@ package cap05;
 import java.text.DecimalFormat;
 import java.util.Arrays;
 
+import java.util.Collections;
 import javax.swing.JOptionPane;
 
 public class SortGradesExercise {
 
-	public static void main(String[] args) {
-		float[] grades = new float[5];
+  public static void main(String[] args) {
+    Float[] grades = new Float[5];
 
-		for (int i = 0; i < grades.length; i++) {
-			float gradesInput = Float.parseFloat(JOptionPane.showInputDialog("Input your grade"));
-			grades[i] = gradesInput;
-			System.out.println(grades[i]);
-		}
+    for (int i = 0; i < grades.length; i++) {
+      float gradesInput = Float.parseFloat(JOptionPane.showInputDialog("Input your grade"));
+      grades[i] = gradesInput;
+    }
 
-		System.out.println();
+    System.out.println();
+    Arrays.sort(grades, Collections.reverseOrder());
 
-		Arrays.sort(grades);
+    float gradeSum = 0;
+    for (int i = 0; i < grades.length; i++) {
+      gradeSum += grades[i];
+    }
 
-		System.out.println(grades[4]);
-		System.out.println(grades[3]);
-		System.out.println(grades[2]);
-		System.out.println(grades[1]);
-		System.out.println(grades[0]);
+    DecimalFormat decimalFormat = new DecimalFormat();
+    decimalFormat.applyPattern("0.00");
 
-		float gradeSum = 0;
-		for (int i = 0; i < grades.length; i++) {
-			gradeSum += grades[i];
-		}
+    float average = gradeSum / grades.length;
 
-		DecimalFormat decimalFormat = new DecimalFormat();
-		float meanGrade = gradeSum / grades.length;
-		decimalFormat.applyPattern("0.00");
-
-		JOptionPane.showMessageDialog(null, "Mean grade: " + decimalFormat.format(meanGrade));
-	}
+    final String message =
+        "Grades average: "
+            + decimalFormat.format(average)
+            + "\nAll grades:\n"
+            + Arrays.toString(grades);
+    JOptionPane.showMessageDialog(null, message);
+  }
 }
