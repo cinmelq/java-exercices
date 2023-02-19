@@ -1,5 +1,13 @@
 package cap05;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
+
 public class NumbersNotRepeatedExercise {
 	
 	public static void main(String[] args) {
@@ -28,6 +36,11 @@ public class NumbersNotRepeatedExercise {
 		System.out.print(removeDuplicatesResult[i] + ", ");
 		}
 		
+		System.out.println();
+		
+		Set<Integer> removeDuplicatesResultSecondMode = removeDuplicatesWithSet(numbers);
+		System.out.println(removeDuplicatesResultSecondMode);
+		
 	}
 	static void sort(int[] array) {
 		for(int i = 0 + 1 ; i < array.length; i++) {
@@ -40,8 +53,9 @@ public class NumbersNotRepeatedExercise {
 			}
 		}
 	}
+	
 	static int[] removeDuplicates(int[] array) {
-		int temporary [] = new int [array.length];
+		int[] temporary = new int [array.length];
 		
 		int count = 0;
 		
@@ -57,6 +71,17 @@ public class NumbersNotRepeatedExercise {
 		for(int i = 0; i < unique.length; i++) {
 			unique[i] = temporary[i];
 		}
+		return unique;
+	}
+	
+	static Set<Integer> removeDuplicatesWithSet(int[] array){
+		Set<Integer> unique = new HashSet<Integer>();
+		//List<Integer> list = Arrays.stream(array).boxed().collect(Collectors.toList());
+		List<Integer> list = new ArrayList<>();
+		for(int number : array) {
+			list.add(number);
+		}
+		unique.addAll(list);
 		return unique;
 	}
 }
