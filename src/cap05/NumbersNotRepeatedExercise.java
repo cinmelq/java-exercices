@@ -13,15 +13,7 @@ public class NumbersNotRepeatedExercise {
 		
 		System.out.println();
 		
-		for(int i = 0 + 1 ; i < numbers.length; i++) {
-			for(int j = 0 ; j < numbers.length; j++) {
-				if(numbers[i] < numbers[j]) {
-					int auxiliar = numbers[j];
-					numbers[j] = numbers[i];
-					numbers[i] = auxiliar;
-				}
-			}
-		}
+		sort(numbers);
 				
 		for(int i = 0; i < numbers.length; i++) {
 			System.out.print(numbers[i] + ", ");
@@ -29,25 +21,42 @@ public class NumbersNotRepeatedExercise {
 		
 		System.out.println();
 		
-		int temporary [] = new int [numbers.length];
+
+		int[] removeDuplicatesResult = removeDuplicates(numbers);
+		
+		for(int i = 0; i < removeDuplicatesResult.length; i++) {
+		System.out.print(removeDuplicatesResult[i] + ", ");
+		}
+		
+	}
+	static void sort(int[] array) {
+		for(int i = 0 + 1 ; i < array.length; i++) {
+			for(int j = 0 ; j < array.length; j++) {
+				if(array[i] < array[j]) {
+					int auxiliar = array[j];
+					array[j] = array[i];
+					array[i] = auxiliar;
+				}
+			}
+		}
+	}
+	static int[] removeDuplicates(int[] array) {
+		int temporary [] = new int [array.length];
 		
 		int count = 0;
 		
-		for(int i = 0; i < numbers.length - 1; i++) {
-			if(numbers[i] != numbers[i+1]) {
-				temporary[count++] = numbers[i];
+		for(int i = 0; i < array.length - 1; i++) {
+			if(array[i] != array[i+1]) {
+				temporary[count++] = array[i];
 			}
 		}
 		
-		temporary[count++] = numbers.length -1;
+		temporary[count++] = array.length -1;
 		
 		int [] unique = new int [count];
 		for(int i = 0; i < unique.length; i++) {
 			unique[i] = temporary[i];
 		}
-		
-		for(int i = 0; i < unique.length; i++) {
-		System.out.print(unique[i] + ", ");
-		}
+		return unique;
 	}
 }
