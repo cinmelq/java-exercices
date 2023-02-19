@@ -22,15 +22,16 @@ public class SortAndSumEvenExercise {
 				}
 			}
 		}
-
+		
+		
 		int [] evenNumbers = new int [10];
 		for (int i = 0; i < numbers.length; i++) {
 			System.out.print(numbers[i] + ", ");
 			boolean verification = numbers[i] % 2 == 0;
-			if (verification) {
+			if(verification)
 				evenNumbers[i] = numbers[i];
-			}			
 		}
+		
 		System.out.println();
 		
 		int sumEvenNumbers = 0;
@@ -38,6 +39,7 @@ public class SortAndSumEvenExercise {
 			System.out.print(evenNumbers[i] + ", ");
 			sumEvenNumbers += evenNumbers[i];
 		}
+		
 		System.out.println();
 		System.out.print("Even sum: " + sumEvenNumbers);
 	}
