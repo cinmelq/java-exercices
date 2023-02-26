@@ -12,7 +12,7 @@ public class CarVacanciesExercises {
 		String menu = "";
 
 		while(!menu.equals("4")) {
-			menu = JOptionPane.showInputDialog("1 - Input\n2 - Car Outing\n3 - List Actual situation\n4 - Close");
+			menu = JOptionPane.showInputDialog("1 - Input\n2 - Car Outing\n3 - List Actual Situation\n4 - Close");
 			switch (menu) {
 			case "1":
 				vacancyNumber = Integer.parseInt(JOptionPane.showInputDialog("Input the vacancy number"));
